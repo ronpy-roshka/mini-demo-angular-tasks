@@ -5,6 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "generate:wc": "ng generate component angular-section --inline-style --inline-template --view-encapsulation ShadowDom",
+    "build:wc": "ng build --prod --output-hashing=none && cat dist/{runtime,polyfills,scripts,main}.js | elements.js",
+    "build:elements": "ng build --output-hashing none && node build-elements.js",
+    "build:custom": "ng build --output-hashing none && node build-elements.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -20,6 +24,7 @@
     "@angular/router": "~13.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
+    "vue": "^3.2.21",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -28,6 +33,7 @@
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "@vue/compiler-sfc": "^3.2.21",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
